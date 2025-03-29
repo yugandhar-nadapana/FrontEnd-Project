@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# Job Portal Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This is a **Job Portal Web Application** built with **React, Redux, Tailwind CSS, and TypeScript**. It features a job listing system with a dashboard, job details page, and a dark mode toggle.
 
-Currently, two official plugins are available:
+## Features
+- 🏠 **Home Page**: Displays job listings.
+- 📄 **Job Details Page**: Shows detailed information about a job.
+- 📊 **Dashboard**: User dashboard for job management.
+- 🌙 **Dark Mode**: User can toggle between light and dark mode.
+- 🛠 **State Management**: Implemented using Redux Toolkit.
+- 🎨 **Tailwind CSS** for responsive UI styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React** - Component-based UI
+- **Redux Toolkit** - State management
+- **React Router** - Navigation
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/job-portal.git
+   cd job-portal
+   ```
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+2. Install dependencies:
+   ```sh
+   npm install  # or yarn install
+   ```
+
+3. Start the development server:
+   ```sh
+   npm run dev  # or yarn dev
+   ```
+
+4. Open in browser:
+   ```
+   http://localhost:5173  # Default Vite port
+   ```
+
+## Project Structure
+```
+/job-portal
+ ├── src/
+ │   ├── components/    # Reusable UI components (Navbar, Sidebar, ThemeToggle)
+ │   ├── pages/         # Page components (Home, Dashboard, JobDetails)
+ │   ├── store/         # Redux store & slices
+ │   ├── styles/        # Tailwind and global styles
+ │   ├── App.tsx        # Main application entry
+ │   ├── main.tsx       # Renders React app
+ │   └── index.css      # Global styles
+ ├── public/            # Static assets
+ ├── package.json       # Dependencies & scripts
+ ├── vite.config.ts     # Vite configuration
+ └── README.md          # Project documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Dark Mode Implementation
+- Dark mode is controlled using Tailwind's `dark:` classes.
+- The **ThemeToggle** button updates the `localStorage` and adds/removes the `dark` class on `<html>`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Contributing
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch (`feature-branch`).
+3. Make your changes and commit.
+4. Push the changes and submit a PR.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## License
+This project is licensed under the **MIT License**.
+
+---
+**Happy Coding! 🚀**
+
